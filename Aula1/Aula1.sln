@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTcpListener", "MyTcpListener\MyTcpListener.csproj", "{028AB120-FB1B-4F2F-9F77-930E765699F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{1310841F-03A2-4AC4-8535-432EB9AABC5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{028AB120-FB1B-4F2F-9F77-930E765699F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{028AB120-FB1B-4F2F-9F77-930E765699F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{028AB120-FB1B-4F2F-9F77-930E765699F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{028AB120-FB1B-4F2F-9F77-930E765699F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1310841F-03A2-4AC4-8535-432EB9AABC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1310841F-03A2-4AC4-8535-432EB9AABC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1310841F-03A2-4AC4-8535-432EB9AABC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1310841F-03A2-4AC4-8535-432EB9AABC5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DD47D69-821E-4A10-A869-306588C32B7A}
+	EndGlobalSection
+EndGlobal
