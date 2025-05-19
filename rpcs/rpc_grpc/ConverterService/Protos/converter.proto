@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option csharp_namespace = "ConverterService"; // Namespace for generated server code
+
+package converter;
+
+// The converter service definition.
+service Converter {
+  // --- Challenge 2: Unit Conversions ---
+
+  // Converts Euros to Dollars
+  rpc EuroToDollar (ConvertRequest) returns (ConvertResponse);
+  // Converts Dollars to Euros
+  rpc DollarToEuro (ConvertRequest) returns (ConvertResponse);
+
+  // Converts Kilometers to Miles
+  rpc KmToMiles (ConvertRequest) returns (ConvertResponse);
+  // Converts Miles to Kilometers
+  rpc MilesToKm (ConvertRequest) returns (ConvertResponse);
+
+  // Converts Celsius to Fahrenheit
+  rpc CelsiusToFahrenheit (ConvertRequest) returns (ConvertResponse);
+  // Converts Fahrenheit to Celsius
+  rpc FahrenheitToCelsius (ConvertRequest) returns (ConvertResponse);
+
+
+  // --- Challenge 3: Streaming Results ---
+
+  // Converts a sequence of Celsius values to Fahrenheit, streaming results.
+  rpc CelsiusToFahrenheitStream (stream ConvertRequest) returns (stream ConvertResponse);
+
+  // Gets multiple conversion results based on a single request (Server Streaming example)
+  // Example: Request 5 conversions starting from 0 Celsius, get 5 Fahrenheit results back.
+  rpc GetMultipleTemperatureConversions(MultiConvertRequest) returns (stream ConvertResponse);
+}
+
+// Request message containing the value to convert
+message ConvertRequest {
+  double value = 1;
+}
+
+// Response message containing the converted value
+message ConvertResponse {
+  double result = 1;
+  string description = 2; // Optional: Add description like "10 EUR is 11 USD"
+}
+
+// Request for multiple conversions (for server streaming example)
+message MultiConvertRequest {
+  double start_value = 1;
+  int32 count = 2;
+  enum ConversionType {
+    CELSIUS_TO_FAHRENHEIT = 0;
+    FAHRENHEIT_TO_CELSIUS = 1;
+    // Add others if needed
+  }
+  ConversionType conversion_type = 3;
+}
